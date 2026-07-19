@@ -158,7 +158,10 @@ body.screenshot-mode .flyout { display:none !important; }
 
 body.screenshot-mode header, body.screenshot-mode .tabs, body.screenshot-mode .card-tabs,
 body.screenshot-mode .screenshot-btn, body.screenshot-mode .reset-btn { display:none !important; }
-body.screenshot-mode .card-view { padding:4px; }
+body.screenshot-mode { overflow:hidden; height:100vh; }
+body.screenshot-mode #view-karte { padding:0; margin:0; height:100vh; overflow:hidden; display:flex; align-items:flex-start; justify-content:center; }
+body.screenshot-mode .card-view { padding:4px; display:none; }
+body.screenshot-mode .card-view.active { display:block; }
 body.screenshot-mode .team-title { font-size:34px; margin-top:8px; }
 body.screenshot-mode .ersatz-section { padding:6px 8px; margin-top:6px; }
 body.screenshot-mode .ersatz-label { font-size:8px; margin-bottom:4px; padding-bottom:3px; }
@@ -458,7 +461,7 @@ let assignments = { a:{}, b:{} };
 let openFlyout = { a:null, b:null };
 let screenshotCard = null;
 
-const DUMMY = [];
+const DUMMY = ["Reacher247", "Pa2ca9", "Niloracete", "Finniboy356", "dk7531", "BussdownXIVII", "Niffelheim", "TriMax85", "Graffixxkous", "MiniRYB", "TheSpecialOne22", "Mightyhell", "GekkoInDisguise", "Schwabo", "elocinya", "Vandel", "Salty88", "LeipziGER", "TanteBeamer", "LordoftheGoose"];
 
 function loadData() {
   try {
@@ -821,12 +824,33 @@ function toggleScreenshotMode(card) {
   closeFlyout(card);
   updateAllStaticNames(card);
   updateConnectors(card);
+  requestAnimationFrame(applyScreenshotScale);
 }
 function exitScreenshotMode() {
   document.body.classList.remove('screenshot-mode');
   document.getElementById('screenshot-exit').classList.remove('show');
+  const el = document.querySelector('.card-view.active');
+  if(el) el.style.transform = '';
   screenshotCard = null;
 }
+
+// Scales the active team's card down (or up) so the whole map + Ersatzspieler
+// fit on one screen without scrolling - same approach as Schluchtensturm.
+function applyScreenshotScale() {
+  const el = document.querySelector('.card-view.active');
+  if(!el) return;
+  el.style.transform = 'none';
+  el.style.width = '100vw';
+  const naturalHeight = el.scrollHeight;
+  const availableHeight = window.innerHeight - 4;
+  const scale = Math.min(1, availableHeight / naturalHeight);
+  el.style.transformOrigin = 'top center';
+  el.style.transform = `scale(${scale})`;
+  if(screenshotCard) requestAnimationFrame(() => updateConnectors(screenshotCard));
+}
+window.addEventListener('resize', () => {
+  if(document.body.classList.contains('screenshot-mode')) applyScreenshotScale();
+});
 
 loadData();
 renderNames();
