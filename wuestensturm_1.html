@@ -63,17 +63,17 @@ header { background:linear-gradient(135deg,#3a2000,#5a3010); border-bottom:2px s
 
 .onode {
   position:absolute; transform:translate(-50%,-50%);
-  display:flex; flex-direction:column; align-items:center; gap:3px;
-  cursor:pointer; z-index:6; width:90px;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  cursor:pointer; z-index:6; width:45px;
 }
-.onode.big { width:120px; z-index:7; }
+.onode.big { width:60px; z-index:7; }
 
-.onode-label { font-size:9px; font-weight:800; letter-spacing:.2px; text-transform:uppercase; color:#3a2000; text-align:center; line-height:1.1; background:rgba(255,255,255,.7); border-radius:5px; padding:2px 4px; max-width:94px; }
-.onode.big .onode-label { font-size:11px; padding:3px 6px; }
+.onode-label { font-size:5px; font-weight:800; letter-spacing:.1px; text-transform:uppercase; color:#3a2000; text-align:center; line-height:1.05; background:rgba(255,255,255,.7); border-radius:3px; padding:1px 2px; max-width:47px; }
+.onode.big .onode-label { font-size:6px; padding:2px 3px; }
 
-.o-img { width:62px; height:62px; border-radius:9px; overflow:hidden; box-shadow:0 3px 8px rgba(0,0,0,.3); border:3px solid transparent; }
+.o-img { width:31px; height:31px; border-radius:5px; overflow:hidden; box-shadow:0 2px 4px rgba(0,0,0,.3); border:2px solid transparent; }
 .o-img img { width:100%; height:100%; object-fit:cover; display:block; }
-.o-img.lg { width:92px; height:92px; }
+.o-img.lg { width:46px; height:46px; }
 
 .onode.c-black  .o-img { border-color:#1a1a1a; }
 .onode.c-blue   .o-img { border-color:#1a5fd6; }
@@ -81,13 +81,13 @@ header { background:linear-gradient(135deg,#3a2000,#5a3010); border-bottom:2px s
 .onode.c-green-lt .o-img { border-color:#8fe040; }
 .onode.c-green  .o-img { border-color:#2fa030; }
 .onode.c-pink   .o-img { border-color:#d030c0; }
-.onode.c-red    .o-img { border-color:#e02020; box-shadow:0 0 14px rgba(224,32,32,.55); }
+.onode.c-red    .o-img { border-color:#e02020; box-shadow:0 0 7px rgba(224,32,32,.55); }
 
 .onode-badge {
-  position:absolute; top:-6px; right:-6px; background:var(--red); color:#fff;
-  font-size:8px; font-weight:800; border-radius:50%; width:16px; height:16px;
-  display:none; align-items:center; justify-content:center; border:1.5px solid #fff;
-  box-shadow:0 1px 4px rgba(0,0,0,.4);
+  position:absolute; top:-4px; right:-4px; background:var(--red); color:#fff;
+  font-size:5px; font-weight:800; border-radius:50%; width:9px; height:9px;
+  display:none; align-items:center; justify-content:center; border:1px solid #fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.4);
 }
 .onode-badge.show { display:flex; }
 
@@ -95,19 +95,19 @@ header { background:linear-gradient(135deg,#3a2000,#5a3010); border-bottom:2px s
 .flyout.open { display:block; }
 .fslot {
   position:absolute; z-index:20;
-  background:rgba(255,250,235,.98); border:1.5px solid var(--red);
-  box-shadow:0 4px 12px rgba(0,0,0,.4);
-  padding:0; width:150px; height:40px;
+  background:rgba(255,250,235,.98); border:1px solid var(--red);
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+  padding:0; width:75px; height:20px;
 }
-.fslot.pos-top    { bottom: calc(100% + 8px); left:50%; transform:translateX(-50%); border-radius:20px 20px 6px 6px; }
-.fslot.pos-right   { left: calc(100% + 8px); top:50%; transform:translateY(-50%); border-radius:6px 20px 20px 6px; }
-.fslot.pos-bottom { top: calc(100% + 8px); left:50%; transform:translateX(-50%); border-radius:6px 6px 20px 20px; }
-.fslot.pos-left    { right: calc(100% + 8px); top:50%; transform:translateY(-50%); border-radius:20px 6px 6px 20px; }
+.fslot.pos-top    { bottom: calc(100% + 4px); left:50%; transform:translateX(-50%); border-radius:10px 10px 3px 3px; }
+.fslot.pos-right   { left: calc(100% + 4px); top:50%; transform:translateY(-50%); border-radius:3px 10px 10px 3px; }
+.fslot.pos-bottom { top: calc(100% + 4px); left:50%; transform:translateX(-50%); border-radius:3px 3px 10px 10px; }
+.fslot.pos-left    { right: calc(100% + 4px); top:50%; transform:translateY(-50%); border-radius:10px 3px 3px 10px; }
 
 .fslot select {
   width:100%; height:100%; background:transparent; border:none; outline:none;
-  color:#000; font-size:22px; font-weight:800; text-align:center; cursor:pointer;
-  appearance:none; -webkit-appearance:none; padding:0 8px;
+  color:#000; font-size:11px; font-weight:800; text-align:center; cursor:pointer;
+  appearance:none; -webkit-appearance:none; padding:0 4px;
 }
 .fslot select option { background:#fffaee; color:#000; }
 
@@ -120,27 +120,27 @@ body.screenshot-mode .flyout { display:none !important; }
 .sname {
   position:absolute; z-index:15;
   background:rgba(255,250,235,.95); border:1px solid var(--red);
-  color:#000; font-size:12px; font-weight:800; text-align:center;
-  padding:3px 8px; white-space:nowrap; box-shadow:0 2px 6px rgba(0,0,0,.3);
+  color:#000; font-size:6px; font-weight:800; text-align:center;
+  padding:1.5px 4px; white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.3);
 }
-.sname.pos-top    { bottom: calc(100% + 4px); left:50%; transform:translateX(-50%); border-radius:10px 10px 4px 4px; }
-.sname.pos-right   { left: calc(100% + 4px); top:50%; transform:translateY(-50%); border-radius:4px 10px 10px 4px; }
-.sname.pos-bottom { top: calc(100% + 4px); left:50%; transform:translateX(-50%); border-radius:4px 4px 10px 10px; }
-.sname.pos-left    { right: calc(100% + 4px); top:50%; transform:translateY(-50%); border-radius:10px 4px 4px 10px; }
+.sname.pos-top    { bottom: calc(100% + 2px); left:50%; transform:translateX(-50%); border-radius:5px 5px 2px 2px; }
+.sname.pos-right   { left: calc(100% + 2px); top:50%; transform:translateY(-50%); border-radius:2px 5px 5px 2px; }
+.sname.pos-bottom { top: calc(100% + 2px); left:50%; transform:translateX(-50%); border-radius:2px 2px 5px 5px; }
+.sname.pos-left    { right: calc(100% + 2px); top:50%; transform:translateY(-50%); border-radius:5px 2px 2px 5px; }
 /* stack multiple names at the same position (e.g. top) without overlapping */
 .sname.stack2 { }
 
 .flyout-ctrl {
   position:absolute; z-index:21;
-  display:flex; gap:3px;
+  display:flex; gap:2px;
 }
-.flyout-ctrl.below { top: calc(100% + 58px); left:50%; transform:translateX(-50%); }
+.flyout-ctrl.below { top: calc(100% + 29px); left:50%; transform:translateX(-50%); }
 .fc-btn {
-  width:22px; height:22px; border-radius:50%; background:var(--gold); color:#fff;
-  border:1.5px solid #fff; font-size:13px; font-weight:900; display:flex;
-  align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 4px rgba(0,0,0,.4);
+  width:14px; height:14px; border-radius:50%; background:var(--gold); color:#fff;
+  border:1px solid #fff; font-size:8px; font-weight:900; display:flex;
+  align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 2px rgba(0,0,0,.4);
 }
-.fc-count { background:rgba(0,0,0,.6); color:#fff; font-size:10px; font-weight:800; border-radius:10px; padding:2px 9px; display:flex; align-items:center; }
+.fc-count { background:rgba(0,0,0,.6); color:#fff; font-size:6px; font-weight:800; border-radius:8px; padding:1px 5px; display:flex; align-items:center; }
 
 .screenshot-btn {
   display:block; margin:4px auto 8px; width:calc(100% - 4px);
@@ -171,7 +171,7 @@ body.screenshot-mode .ersatz-grid .mslot select { font-size:8px; height:18px; bo
 .ersatz-section { background:var(--panel2); border:1.5px solid var(--border); border-radius:12px; padding:10px; margin-bottom:8px; }
 .ersatz-label { font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--text); text-align:center; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid var(--border); }
 .ersatz-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
-.ersatz-grid .mslot select { border:none; border-bottom:2px solid var(--red); background:rgba(255,255,255,.4); border-radius:0; text-align:center; height:28px; font-size:12px; font-weight:700; width:100%; padding:2px; }
+.ersatz-grid .mslot select { border:none; border-bottom:1px solid var(--red); background:rgba(255,255,255,.4); border-radius:0; text-align:center; height:14px; font-size:6px; font-weight:700; width:100%; padding:1px; }
 
 .reset-btn { display:block; margin:14px auto 0; background:rgba(100,60,10,.12); border:1.5px solid var(--border); color:var(--muted); border-radius:20px; padding:9px 20px; font-size:11px; cursor:pointer; font-weight:600; }
 
@@ -179,6 +179,7 @@ body.screenshot-mode .ersatz-grid .mslot select { font-size:8px; height:18px; bo
 .names-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
 .names-header h2 { font-size:15px; font-weight:800; color:var(--text); }
 .add-btn { background:linear-gradient(135deg,#c8921a,#e0a820); color:#fff; border:none; border-radius:20px; padding:8px 16px; font-size:12px; font-weight:800; cursor:pointer; }
+.clear-all-btn { display:block; margin:20px auto 0; background:rgba(180,20,20,.12); border:1.5px solid #b01414; color:#8a1010; border-radius:20px; padding:10px 18px; font-size:11px; font-weight:700; cursor:pointer; }
 .add-form { background:var(--panel2); border:1.5px solid var(--border); border-radius:12px; padding:12px; margin-bottom:12px; display:none; flex-direction:column; gap:8px; }
 .add-form.open { display:flex; }
 .add-form input { background:rgba(255,248,225,.95); border:1.5px solid var(--red); border-radius:20px; color:var(--text); font-size:14px; padding:9px 14px; width:100%; }
@@ -438,6 +439,7 @@ body.screenshot-mode .ersatz-grid .mslot select { font-size:8px; height:18px; bo
   </div>
   <div class="name-list" id="list-eigen"></div>
   <div class="empty-state" id="empty-hint">Noch keine Spieler eingetragen.<br>Tippe auf "+ Hinzufügen".</div>
+  <button class="clear-all-btn" onclick="clearAllNames()">🗑 Alle Namen &amp; Zuweisungen komplett löschen</button>
 </div>
 
 <div class="view" id="view-uebersicht">
@@ -765,6 +767,22 @@ function deletePlayer(name) {
   CARDS.forEach(c => { Object.keys(assignments[c]).forEach(k => { if(assignments[c][k]===name) assignments[c][k]=''; }); });
   persist(); renderNames();
   CARDS.forEach(c => updateAllBadges(c));
+}
+function clearAllNames() {
+  if(!confirm('Wirklich ALLE Namen und sämtliche Zuweisungen auf diesem Gerät unwiderruflich löschen?')) return;
+  players = [];
+  assignments = { a:{}, b:{} };
+  CARDS.forEach(c => { ALL_KEYS.forEach(k => slotCounts[c][k] = 0); slotCounts[c]['ersatz'] = 10; closeFlyout(c); });
+  try {
+    localStorage.removeItem('ws4_players');
+    localStorage.removeItem('ws4_assignments');
+    localStorage.removeItem('ws4_slotcounts');
+  } catch(e) {}
+  persist();
+  renderNames();
+  CARDS.forEach(c => { renderErsatz(c); updateAllBadges(c); updateAllStaticNames(c); updateConnectors(c); });
+  buildOv();
+  alert('Alles gelöscht.');
 }
 function renderNames() {
   const usedA = new Set(Object.values(assignments.a).filter(Boolean));
